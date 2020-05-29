@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'g.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.2
+## Created by: Qt User Interface Compiler version 5.15.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -27,11 +27,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.progressBar = QProgressBar(self.centralwidget)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setValue(24)
+        self.bossHealth = QProgressBar(self.centralwidget)
+        self.bossHealth.setObjectName(u"bossHealth")
+        self.bossHealth.setStyleSheet(u"QProgressBar {\n"
+"	background-color: rgb(78, 154, 6);\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"	background-color: rgb(164, 0, 0);\n"
+"}")
+        self.bossHealth.setValue(24)
+        self.bossHealth.setTextVisible(False)
+        self.bossHealth.setInvertedAppearance(False)
 
-        self.verticalLayout_2.addWidget(self.progressBar)
+        self.verticalLayout_2.addWidget(self.bossHealth)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
