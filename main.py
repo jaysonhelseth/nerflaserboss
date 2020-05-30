@@ -1,5 +1,4 @@
 import sys
-import re
 import os
 from PySide2 import QtCore
 from PySide2.QtCore import QTimer
@@ -15,8 +14,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.quitButton.clicked.connect(app.exit)
         self.resetButton.clicked.connect(self.reset)
         self.setWindowState(QtCore.Qt.WindowState.WindowFullScreen)
-        self.keyBuffer = []
-        self.phrase = re.compile(r'www[.]acmetools[.]com')
 
         self.bossHealth.setMinimum(0)
         self.bossHealth.setMaximum(100)
@@ -29,14 +26,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.start()
 
     def keyPressEvent(self, event):
-        self.keyBuffer.append(event.text())
+        if event.key() != QtCore.Qt.Key_Return and event.key() != QtCore.Qt.Key_Enter:
+            return
 
-        letters = "".join(self.keyBuffer)
-        match = self.phrase.search(letters)
-        if match and self.bossHealth.value() < 100:
+        if self.bossHealth.value() < 100:
             self.bossHealth.setValue(self.bossHealth.value() + 25)
             print("Hit!")
-            self.keyBuffer = []
 
     def gameEvents(self):
         if self.bossHealth.value() >= 100:
@@ -53,7 +48,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def reset(self):
         self.bossHealth.setValue(0)
-        self.keyBuffer = []
 
 
 if __name__ == '__main__':
