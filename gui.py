@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'g.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.0
+## Created by: Qt User Interface Compiler version 5.14.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -51,18 +51,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
-        self.playPauseButton = QPushButton(self.centralwidget)
-        self.playPauseButton.setObjectName(u"playPauseButton")
-
-        self.verticalLayout.addWidget(self.playPauseButton)
-
         self.resetButton = QPushButton(self.centralwidget)
         self.resetButton.setObjectName(u"resetButton")
+        self.resetButton.setMinimumSize(QSize(100, 50))
 
         self.verticalLayout.addWidget(self.resetButton)
 
         self.quitButton = QPushButton(self.centralwidget)
         self.quitButton.setObjectName(u"quitButton")
+        self.quitButton.setMinimumSize(QSize(100, 50))
 
         self.verticalLayout.addWidget(self.quitButton)
 
@@ -82,7 +79,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.playPauseButton.setText(QCoreApplication.translate("MainWindow", u"Play / Pause", None))
         self.resetButton.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.quitButton.setText(QCoreApplication.translate("MainWindow", u"Quit", None))
     # retranslateUi
