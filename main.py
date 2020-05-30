@@ -25,7 +25,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # game loop timer
         self.timer = QTimer()
         self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.gameEvents())
+        self.timer.timeout.connect(self.gameEvents)
         self.timer.start()
 
     def keyPressEvent(self, event):
