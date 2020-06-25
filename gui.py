@@ -21,11 +21,17 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet(u"#MainWindow {\n"
+"	background-color: rgb(46, 52, 54);\n"
+"	background-image: url(\"tron-wallpaper.jpg\");\n"
+"	background-position: center;\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.bossHealth = QProgressBar(self.centralwidget)
         self.bossHealth.setObjectName(u"bossHealth")
@@ -54,12 +60,18 @@ class Ui_MainWindow(object):
         self.resetButton = QPushButton(self.centralwidget)
         self.resetButton.setObjectName(u"resetButton")
         self.resetButton.setMinimumSize(QSize(100, 50))
+        self.resetButton.setStyleSheet(u"#resetButton {\n"
+"	background-color: rgb(0, 255, 255)\n"
+"}")
 
         self.verticalLayout.addWidget(self.resetButton)
 
         self.quitButton = QPushButton(self.centralwidget)
         self.quitButton.setObjectName(u"quitButton")
         self.quitButton.setMinimumSize(QSize(100, 50))
+        self.quitButton.setStyleSheet(u"#quitButton {\n"
+"	background-color: rgb(0, 255, 255)\n"
+"}")
 
         self.verticalLayout.addWidget(self.quitButton)
 
